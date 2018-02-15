@@ -1,0 +1,68 @@
+html{font-size:100%;}
+body{background-color:#fff9f3;}
+
+@font-face{
+	font-family: 'Paprika';
+	src: url("../paprika/paprika-regular.ttf");
+}
+
+@font-face{
+	font-family: 'Amaranth';
+	src: url("amaranth/amaranth-regular-webfont.ttf");
+}
+
+@font-face{
+ font-family: 'Blacksword';
+    src: url('blacksword/blacksword-webfont.woff2') format('woff2'),
+         url('blacksword/blacksword-webfont.woff') format('woff');
+}
+
+*{box-sizing: border-box;}
+
+header{
+	background-color:#fff7e6;	
+	left: 0;
+	height: 20rem; /* 320px */
+	text-align: center;
+	top: 0;
+	width: 100%;
+}
+
+h1{	color:#595959;
+	font-size:3.25rem; /* 52px */
+	font-family: Blacksword, Amaranth, serif; 
+	padding: 7rem 2rem 0rem 2rem; 
+}
+
+main{
+	padding: 2rem;
+}
+
+
+div.entryField{	
+
+	font-size:1rem; /* 16px */
+	font-family: Paprika, Lato; 
+	padding: 1rem; /* 20px */
+}
+
+div.description{
+	color: #595959;
+	padding-bottom:1rem; 
+}
+
+div.submitButton{
+	padding:1rem; 
+}
+
+
+.grid{	
+	display: grid;
+	grid-template-columns: repeat(3, 33%);
+	grid-auto-rows: minmax(5rem, auto);
+	justify-content: space-around;
+	}
+
+
+
+
