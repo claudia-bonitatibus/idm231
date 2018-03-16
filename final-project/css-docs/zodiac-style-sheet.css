@@ -7,14 +7,9 @@ body{background-color:#fff9f3;}
 }
 
 @font-face{
-	font-family: 'Amaranth';
-	src: url("amaranth/amaranth-regular-webfont.ttf");
-}
-
-@font-face{
  font-family: 'Blacksword';
-    src: url('blacksword/blacksword-webfont.woff2') format('woff2'),
-         url('blacksword/blacksword-webfont.woff') format('woff');
+    src: url('../blacksword/blacksword-webfont.woff2') format('woff2'),
+         url('../blacksword/blacksword-webfont.woff') format('woff');
 }
 
 *{box-sizing: border-box;}
@@ -129,7 +124,7 @@ aside p {
 
 h1{	color:#595959;
 	font-size:2rem; /* 52px */
-	font-family: Blacksword, Paprika, Amaranth, serif; 
+	font-family: Blacksword, Paprika, serif; 
 	line-height: 150%;
 	padding: 2rem 5rem 0 5rem;
 	text-align: center;
@@ -143,7 +138,7 @@ h2{
 }
 
 h3{
-	font-family: Paprika, Amaranth, serif;
+	font-family: Paprika, serif;
 }
 
 h4{
@@ -193,7 +188,7 @@ p {
 	padding-top: 2rem;
 }
 
-.updated{
+.resultContent aside{
 	transform: translateY(-200vh);
 	opacity: 0;
 }
