@@ -173,14 +173,14 @@ input[type=date] {
 }
 
 p {
-	font-size: 1.25rem;
-	font-family: 'times new roman';
-}
-
-.pageTwo p{
 	font-size: 1rem;
 	font-family: 'times new roman';
 }
+
+/*.pageTwo p{
+	font-size: 1rem;
+	font-family: 'times new roman';
+}*/
 
 .previous{
 	color: #c3504a;
@@ -215,24 +215,40 @@ p {
 	transform: translateX(-100vw);
 	opacity: 0; 
 }
+@media only screen and (max-width: 400px){
+	.resultPage, .showResultPage{
+		margin-top: 5.75rem;
+	}
 
+	.textContent, .resultPage, .showResultPage{
+		height:80rem;
+	}
+}
 
+@media only screen and (min-width: 400px) and (max-width: 869px){
+	.textContent, .resultPage, .showResultPage{
+		height:85rem;
+	}
+}
 
 @media only screen and (max-width: 869px){
-	.resultPage{
-		position: absolute;
-		top: 21rem;
-		width: 90vw;
-	}
-
-	.showResultPage{
-		position: static;
-	}
-
 	body{
+		background-color: #fff9e6;
+	}
+
+	.resultPage, .showResultPage{
+		position: absolute;
+		top:30rem;
+	}
+
+	.textContent, .resultPage, .showResultPage {
 		background-image:url('../assets/mobile-background-texture.jpg');
 		background-repeat: no-repeat;
 		background-size: 100vw;
+		font-size: 1.12rem;
+		font-family: 'times new roman';
+		line-height: 2.25rem;
+		padding: 8vh 10vw;
 	}
 
 	.creatures{
@@ -257,12 +273,6 @@ p {
 
 	.pageIllustration img{
 		width: 65%;
-	}
-
-	.textContent, .resultPage, .showResultPage{
-		padding: 1rem 3rem 0 3rem;
-		font-size: 1.12rem;
-		line-height: 2.25rem;
 	}
 }
 
