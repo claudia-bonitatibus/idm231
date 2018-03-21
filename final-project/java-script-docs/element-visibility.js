@@ -33,7 +33,7 @@ var width = window.innerWidth;
 
 function showHidden(){
 	for (deselect= 0; deselect< descriptionCard.length; deselect++) {
-		    if (descriptionCard[deselect].classList == "showDescription" && descriptionCard[i] != descriptionCard[clicked]){
+		    if (descriptionCard[deselect].classList == "showDescription" && descriptionCard[deselect] != descriptionCard[clicked]){
 		    	descriptionCard[deselect].classList = "hide";
 		    }
 	}
@@ -41,8 +41,7 @@ function showHidden(){
 	if(descriptionCard[clicked].classList == "hide"){
 		descriptionCard[clicked].classList = "showDescription";
 	}
-
-	else {
+	else if(descriptionCard[clicked].classList == "showDescription") {
 		descriptionCard[clicked].classList = "hide";
 	}
 }
