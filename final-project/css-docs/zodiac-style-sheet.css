@@ -18,7 +18,7 @@ body{background-color:#fff9f3;}
 @keyframes slideLeft {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 100%; 
   }
 
   to {
@@ -56,13 +56,17 @@ body{background-color:#fff9f3;}
 }
 
 
-@keyframes opacityScale{
+@keyframes opacityScaleLeft{
   from {
+  	margin-left: 100%;
+    width: 300%; 
     opacity: 0; 
   }
 
   to {
-	opacity: 1;
+	margin-left: 0%;
+    width: 100%;
+    opacity: 1;
   }
 }
 
@@ -149,6 +153,10 @@ h4{
 	text-align: center;
 }
 
+.hide{
+	display: none;
+}
+
 input[type=text], input[type=date] {
     border: none;
     border-bottom: 1px solid #c3504a;
@@ -159,19 +167,30 @@ input[type=text], input[type=date] {
     text-align: center;
     width: 6.5rem; 
 }
+
 input[type=date] {
     width: 9rem;
 }
 
+p {
+	font-size: 1.25rem;
+	font-family: 'times new roman';
+}
 
 .pageTwo p{
 	font-size: 1rem;
 	font-family: 'times new roman';
 }
 
-p {
-	font-size: 1.25rem;
-	font-family: 'times new roman';
+.previous{
+	color: #c3504a;
+	display: block;
+	font-weight: bold;
+	padding-top: 0;
+}
+
+.previous:hover{
+	text-decoration: underline;
 }
 
 .largeIcon{
@@ -189,8 +208,7 @@ p {
 }
 
 .resultContent aside{
-	transform: translateY(-200vh);
-	opacity: 0;
+ 	display: none;
 }
 
 .resultPage{
@@ -201,15 +219,20 @@ p {
 
 
 @media only screen and (max-width: 869px){
-	.resultPage, .showResultPage{
+	.resultPage{
 		position: absolute;
 		top: 21rem;
 		width: 90vw;
 	}
 
+	.showResultPage{
+		position: static;
+	}
+
 	body{
 		background-image:url('../assets/mobile-background-texture.jpg');
 		background-repeat: no-repeat;
+		background-size: 100vw;
 	}
 
 	.creatures{
@@ -225,13 +248,11 @@ p {
 		padding: 1rem 2.5rem 0rem 2rem;
 	 }
 
-	.hiddenDescription{
+	.showDescription{
 		background-color:rgba(255, 247, 230, .6);
 		margin: 2rem;
 		padding: .5rem;
 		text-align: center;
-
-		display:none;
 	}
 
 	.pageIllustration img{
@@ -263,11 +284,17 @@ p {
 		animation-name: slideUp;
 	}
 
+	.resultPage, .showResultPage{
+		position: absolute;
+		top: 23.25rem;
+	}
+
 	#creature1, #creature2, #creature3, #creature4, #creature5, #creature6, 
 	#creature7, #creature8, #creature9, #creature10, #creature11, #creature12{
 		animation-timing-function: ease-in;
-		animation-duration: .75s;
-		animation-name: slideLeft;
+		animation-duration: .4s;
+		animation-name: opacityScaleLeft;
+
 	}
 	aside p {
 			padding: 1.25rem 3rem;
@@ -277,19 +304,21 @@ p {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-auto-rows: minmax(5rem, auto);
 		grid-column-gap: 1rem;
-		grid-row-gap: 2rem;
+		grid-row-gap: 3rem;
 	}
 
 	.pageIllustration img{
-	width: 45%;
-}
+		width: 45%;
+	}
 }
 
 @media only screen and (min-width: 870px){
+
 	.resultPage, .showResultPage{
 		position: absolute;
 		top: 23.25rem;
 	}
+
 	.showResultPage{
 		animation-timing-function: ease-out;
 		animation-duration: .6s;
@@ -305,7 +334,7 @@ p {
 		padding: 2.5rem 7%;
 	}
 
-	.hiddenDescription{
+	.showDescription{
 		display: grid;
 		grid-template-columns: 2fr 5fr;
 		grid-column-gap: 2rem;
@@ -313,26 +342,26 @@ p {
 		padding: 1rem 4.5rem;
 		margin:2rem;
 		background-color:#fff7e6;
-		display:none;
 	}
 
 	.pageIllustration img{
 	width: 85%;
-}
+	}
 
 	.textContent, .resultPage, .showResultPage{
 		background-image: url('../assets/book-texture.png');
 	 	background-repeat: no-repeat;
 	 	background-position: center;
+	 	background-size: 93vw;
 	 	display: grid;
 	 	font-family: 'Times New Roman';
 	 	grid-area: main;
 	 	grid-template-columns: 1fr 1fr;
 	 	grid-column-gap: 12%;
 	 	grid-template-areas:'pageOne pageTwo';
-	 	height:34rem;
+	 	height:36rem;
 	 	line-height: 1.75rem;
-	 	padding: 4rem 14%;
+	 	padding: 2rem 10%;
 	 }
 
 	 #creature1, #creature2, #creature3{
@@ -357,16 +386,13 @@ p {
 	 }
 }
 
-@media only screen and (min-width: 980px){
-	.resultContent{
-		position: absolute;
-		margin-top: -57.25rem;
+@media only screen and (min-width: 820px) and (max-width: 984px){
+	.showResultPage{
+	transform: translateY(7vw);
 	}
+}
 
-	.description{
-		padding-top: 1.25rem;
-	}
-
+@media only screen and (min-width: 1150px){
 	aside{
 		background-color: transparent;
 		background-image: url('../assets/bookmark-image.png');
@@ -379,12 +405,16 @@ p {
 	}
 
 	aside p{
-		padding: 7.75rem 42% 0 16%;
+		padding: 9rem 42% 0 16%;
 		text-align: center;
 		font-family: Paprika, 'Times New Roman';
 		font-size: .80rem;
 		line-height: 1.12rem;
 	}
+
+	.description{
+		padding-top: 1.25rem;
+	}	
 
 	header{
 		animation-timing-function: ease-out; 
@@ -392,15 +422,37 @@ p {
 		animation-name: slideLeft;
 	}
 
-	.pageOne{grid-area: pageOne;}
-	.pageTwo{grid-area: pageTwo;}
+	.pageOne{
+		grid-area: pageOne;
+		padding-top: 1.5vw;
+	}
+
+	.pageTwo{
+		grid-area: pageTwo;
+		padding-top: 1.5vw;
+	}
+
+	.previous{
+		padding-top: 1.5vw;
+	}
+
+	.resultContent{
+		position: absolute;
+		margin-top: -57.25rem;
+	}
+
+	.resultContent aside{
+	 	display: block;
+	 	opacity: 0;
+	}
 
 	.textContent, .resultPage, .showResultPage{
 		grid-area: main;
 		background-image: url('../assets/book-texture.png');
+	 	background-size: 90%;
 	 	background-repeat: no-repeat;
 	 	background-position: center;
-	 	height:34rem;
+	 	height:35rem;
 	 	text-align: justify;
 
 	/**** PAGE COLUMNS ****/
@@ -409,7 +461,11 @@ p {
 	 	grid-column-gap: 12%;
 	 	grid-template-areas:'pageOne pageTwo';
 	 	align-items: stretch;
-	 	padding: 3.25rem 14% 0rem 15%;
+	 	padding: 2vw 11% 0rem 12%;
+	}
+
+	.showResultPage{
+		top:22rem;
 	}
 
 	.primaryContent, .resultContent{
@@ -418,5 +474,3 @@ p {
 		grid-template-areas: 'sidePanel main main main main';
 	}
 }
-
-
