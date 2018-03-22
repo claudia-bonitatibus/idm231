@@ -10,7 +10,7 @@ document.getElementById("creature9Result"),
 document.getElementById("creature10Result"),
 document.getElementById("creature1Result"),
 document.getElementById("creature4Result"),
-document.getElementById("creature8Result"),]
+document.getElementById("creature8Result")]
 
 var signAudio = [
 document.getElementById("creature12Audio"),
@@ -24,7 +24,7 @@ document.getElementById("creature9Audio"),
 document.getElementById("creature10Audio"),
 document.getElementById("creature1Audio"),
 document.getElementById("creature4Audio"),
-document.getElementById("creature8Audio"),]
+document.getElementById("creature8Audio")]
 
 var customizeResult = [
 document.getElementById("creature12Story"),
@@ -38,7 +38,7 @@ document.getElementById("creature9Story"),
 document.getElementById("creature10Story"),
 document.getElementById("creature1Story"),
 document.getElementById("creature4Story"),
-document.getElementById("creature8Story"),]
+document.getElementById("creature8Story")]
 
 
 var formElement= document.getElementById("form");
@@ -56,7 +56,14 @@ function resultVisibility(firstName, lastName){
     signAudio[i].play();
     signResult[i].classList = "showResultPage";
     descriptionCard[gridNumber].classList = "showDescription";  
-    
+
+    for (deselect= 0; deselect<signResult.length; deselect++) {
+        if (signResult[deselect].classList == "showResultPage" && signResult[deselect] != signResult[i]){
+            signResult[deselect].classList = "resultPage";
+            descriptionCard[deselect].classList = "hide";
+        }
+    }
+
     if(clicked != gridNumber){
       descriptionCard[clicked].classList = "hide";  
     }
